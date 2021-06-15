@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+
+    <title>Central Admin</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/all.css" rel="stylesheet" type="text/css">
+    <link href="css/muli.css" rel="stylesheet">
+    <link rel="preload" href="vendor/gfonts/1Ptvg83HX_SGhgqk3wot.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="vendor/gfonts/1Pttg83HX_SGhgqk2jogaqRXBA.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="vendor/gfonts/1Pttg83HX_SGhgqk2jovaqQ.woff2" as="font" type="font/woff2">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+        <a class="mr-auto" href="dashboard.html"><img class="navbar-brand mr-auto" style="height:50px; width:auto;"
+                src="img/logo.svg" /></a>
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-md-1 dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fal fa-hammer fa-fw"></i>
+                    <!-- Counter - Messages -->
+                    <span class="font-weight-bold text-primary d-none d-sm-block">&nbsp;Build </span>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div class="dropdown-menu dropdown-menu-left shadow animated--grow-in"
+                    aria-labelledby="messagesDropdown">
+                    <a class="dropdown-item d-flex align-items-center" href="connectors.html">
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">Connectors</div>
+                        </div>
+                    </a>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">Data Sync</div>
+                        </div>
+                    </a>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">Notifications</div>
+                        </div>
+                    </a>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">API Gateway</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item px-md-1 dropdown no-arrow mx-1">
+                <a class="nav-link" role="button">
+                    <i class="fal fa-flask-round-potion"></i>
+                    <span class="font-weight-bold text-primary d-none d-sm-block">&nbsp;Test</span>
+                </a>
+            </li>
+            <li class="nav-item px-md-1 dropdown active no-arrow mx-1">
+                <a class="nav-link" href="monitor.html" role="button">
+                    <i class="fal active fa-monitor-waveform"></i>
+                    <span class="font-weight-bold text-primary d-none d-sm-block">&nbsp;Monitor</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+
+
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline font-weight-bold text-primary">Mark Johnson</span>
+                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fal fa-sign-out-alt fa-sm fa-fw mr-2"></i>
+                        Logout
+                    </a>
+                </div>
+            </li>
+
+        </ul>
+
+    </nav>
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- DataTales Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary"><i class="fal fa-monitor-waveform"></i>&nbsp;Monitor
+                    </h6>
+                    <div class="float-right">
+                        <a href="#" class="btn float-right bld-btn btn-sm  btn-primary">
+                            <span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Refresh</span>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Entity</th>
+                                    <th>Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>4f0d7f7e-19f0-4675-b4e4-61259c65fdea</td>
+                                    <td>Org</td>
+                                    <td>06/04/2021 10:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>94a6f541-778a-4ffe-ab20-e2e5c07e89db</td>
+                                    <td>Product</td>
+                                    <td>06/04/2021 10:16PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>962e8026-116c-475f-9281-2dc7822821d3</td>
+                                    <td>Person</td>
+                                    <td>06/04/2021 10:17PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>d8331b39-ef7c-483b-b423-2cd7f61bf391</td>
+                                    <td>Project</td>
+                                    <td>06/04/2021 8:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>8d270588-546b-420f-bb2f-c9b1a29e7604</td>
+                                    <td>Org</td>
+                                    <td>06/04/2021 9:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>0ee4ed53-8a79-44e2-8b77-9e2701e23aa2</td>
+                                    <td>Product</td>
+                                    <td>06/04/2021 3:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>4ce418f6-7dc7-4d64-ab20-72fae26a48bc</td>
+                                    <td>Person</td>
+                                    <td>06/04/2021 1:15AM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>73421440-0342-4823-9f42-aa8d25828b80</td>
+                                    <td>Project</td>
+                                    <td>06/05/2021 1:25AM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>4cf7f957-0efd-43eb-8248-98a4116755dd</td>
+                                    <td>Org</td>
+                                    <td>06/06/2021 12:15AM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>13801e93-fb68-4096-9e5e-e802a6501e12</td>
+                                    <td>Product</td>
+                                    <td>06/05/2021 3:25AM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>c39dd3a8-3f15-4a46-810f-ac0139970262</td>
+                                    <td>Person</td>
+                                    <td>06/05/2021 4:25AM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>ef1f3653-33a8-4266-a57a-33644ce1bc07</td>
+                                    <td>Product</td>
+                                    <td>06/05/2021 6:30AM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>74a1f8e9-2025-48de-bff4-9fa156c6d1c8</td>
+                                    <td>Org</td>
+                                    <td>06/05/2021 6:30PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>98603c41-91f0-4fee-9be8-11ea7bc80aaf</td>
+                                    <td>Person</td>
+                                    <td>06/05/2021 6:31PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>c775e219-037b-48a8-b5d3-7d1416f78378</td>
+                                    <td>Product</td>
+                                    <td>06/05/2021 6:32PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>a3f58f0d-03c1-40d4-a725-10e1608d5699</td>
+                                    <td>Project</td>
+                                    <td>06/05/2021 6:22PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>7008d6d3-326c-45fc-9572-d0a08bc4f408</td>
+                                    <td>Org</td>
+                                    <td>06/05/2021 6:20PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>c396f96f-8430-42c6-a431-98199a3dd6fd</td>
+                                    <td>Product</td>
+                                    <td>06/05/2021 7:20PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>5a0b82d7-8f45-4c41-98cc-035646ce86c8</td>
+                                    <td>Project</td>
+                                    <td>06/05/2021 7:22PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>babb6639-2d27-4c87-a367-a175fb3a6a45</td>
+                                    <td>Org</td>
+                                    <td>06/05/2021 7:16PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>b3ef3db5-ccb9-45de-8ff1-259d772561f2</td>
+                                    <td>Project</td>
+                                    <td>06/05/2021 7:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>544653d9-1e06-4dae-8676-c63cd1517252</td>
+                                    <td>Project</td>
+                                    <td>06/05/2021 10:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>bb4b52a4-c1ec-4962-892d-cc7b0b7aab36</td>
+                                    <td>Product</td>
+                                    <td>06/05/2021 2:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>28085856-d5ff-4ef8-8e1f-e08b2ce136db</td>
+                                    <td>Org</td>
+                                    <td>06/05/2021 1:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>ba2f578d-aa22-4a44-82b5-885dacbaabf3</td>
+                                    <td>Project</td>
+                                    <td>06/05/2021 11:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>14ede218-756d-47ad-8956-cce16ef4bbfa</td>
+                                    <td>Org</td>
+                                    <td>06/05/2021 12:15PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>3d70edce-3b17-43f6-ad8c-7f38530a5682</td>
+                                    <td>Product</td>
+                                    <td>06/05/2021 1:30PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>834e9a83-e623-4bb2-a310-bde25a8156b2</td>
+                                    <td>Project</td>
+                                    <td>06/05/2021 1:30PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>a3cc4dd1-555d-4759-b7bb-e299df853e04</td>
+                                    <td>Org</td>
+                                    <td>06/03/2021 1:30PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>8c7a74be-500d-4c36-8738-269b310f614a</td>
+                                    <td>Project</td>
+                                    <td>06/02/2021 12:30PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>2928b8c3-84ed-4be1-9a3c-3fc9c2d79f09</td>
+                                    <td>Product</td>
+                                    <td>06/02/2021 2:30PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>b93ec815-98bf-4c11-ba8d-e440140e65dd</td>
+                                    <td>Product</td>
+                                    <td>06/02/2021 4:30PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>355c74ef-aa8c-4145-bada-3d45138b862e</td>
+                                    <td>Person</td>
+                                    <td>06/02/2021 5:30PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>1b984b22-ae57-45da-9e0f-0d25590f7602</td>
+                                    <td>Person</td>
+                                    <td>06/02/2021 5:34PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>bf3be50f-c68f-456e-b0a4-eca280aff04f</td>
+                                    <td>Person</td>
+                                    <td>06/02/2021 3:21PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>bd1238e7-e925-4cad-aa78-d43d53ba62b4</td>
+                                    <td>Person</td>
+                                    <td>06/02/2021 3:23PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>8aef1270-251a-4960-bd53-2e17253421e2</td>
+                                    <td>Person</td>
+                                    <td>06/02/2021 3:25PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>3a5bd0c5-55a2-45da-86ad-a18a66a25b80</td>
+                                    <td>Project</td>
+                                    <td>06/02/2021 5:40PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>04d3398d-dc0e-4d16-908b-912de98ec687</td>
+                                    <td>Project</td>
+                                    <td>06/02/2021 7:40AM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>a9fb4f48-cb49-4c4e-adf2-104b1b8f5a18</td>
+                                    <td>Project</td>
+                                    <td>06/02/2021 7:41AM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                                <tr>
+                                    <td>c0f45408-60ce-4343-81c3-84a9171e4863</td>
+                                    <td>Org</td>
+                                    <td>06/02/2021 7:39PM<a href="#" data-toggle="modal" data-target="#reRun"class="btn float-right bld-btn btn-sm  btn-primary"><span class="text"><i class="text-white fal fa-sync"></i>&nbsp;Re-Run</span></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; TeamCentral 2021</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="reRun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Re-Run?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group list-group mb-2">
+                        <li class="list-group-item">ID: 3a5bd0c5-55a2-45da-86ad-a18a66a25b80</li>
+                        <li class="list-group-item">Entity Type: Project</li>
+                        <li class="list-group-item">Time Stamp: 06/02/2021 5:40PM</li>
+                    </ul>
+                    <pre class="prism-code language-json css-1wertj5 eiqe2b57"
+                        style="color: rgb(248, 248, 242); background-color: rgb(40, 42, 54);"><code><div class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain">POST - https</span><span class="token operator">:</span><span class="token comment" style="color: rgb(98, 114, 164);">//{provided by Central Team}/api/securitytokens </span><span class="token plain"></span></div><div class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token punctuation" style="color: rgb(248, 248, 242);">{</span><span class="token plain"> </span></div><div class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token property">"client_id"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(255, 121, 198);">"provided by Central team"</span><span class="token punctuation" style="color: rgb(248, 248, 242);">,</span><span class="token plain"> </span></div><div class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token property">"client_secret"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(255, 121, 198);">"provided by Central team"</span><span class="token punctuation" style="color: rgb(248, 248, 242);">,</span><span class="token plain"> </span></div><div class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token property">"grant_type"</span><span class="token operator">:</span><span class="token plain"> </span><span class="token string" style="color: rgb(255, 121, 198);">"client_credentials"</span><span class="token plain"> </span></div><div class="token-line" style="color: rgb(248, 248, 242);"><span class="token plain"></span><span class="token punctuation" style="color: rgb(248, 248, 242);">}</span></div></code></pre>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="#">Re-Run</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+
+</body>
+
+</html>

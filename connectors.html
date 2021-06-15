@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.png" type="image/png" />
+
+
+    <title>Central Admin</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/all.css" rel="stylesheet" type="text/css">
+    <link href="css/muli.css" rel="stylesheet">
+    <link rel="preload" href="vendor/gfonts/1Ptvg83HX_SGhgqk3wot.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="vendor/gfonts/1Pttg83HX_SGhgqk2jogaqRXBA.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="vendor/gfonts/1Pttg83HX_SGhgqk2jovaqQ.woff2" as="font" type="font/woff2">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+        <a class="mr-auto" href="dashboard.html"><img class="navbar-brand mr-auto" style="height:50px; width:auto;"
+                src="img/logo.svg" /></a>
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-md-1 dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fal fa-hammer fa-fw"></i>
+                    <!-- Counter - Messages -->
+                    <span class="font-weight-bold text-primary d-none d-sm-block">&nbsp;Build </span>
+                </a>
+                <!-- Dropdown - Messages -->
+                <div class="dropdown-menu dropdown-menu-left shadow animated--grow-in"
+                    aria-labelledby="messagesDropdown">
+                    <a class="dropdown-item d-flex align-items-center" href="connectors.html">
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">Connectors</div>
+                        </div>
+                    </a>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">Data Sync</div>
+                        </div>
+                    </a>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">Notifications</div>
+                        </div>
+                    </a>
+                    <a class="dropdown-item d-flex align-items-center" href="#">
+                        <div class="font-weight-bold">
+                            <div class="text-truncate">API Gateway</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="nav-item px-md-1 dropdown no-arrow mx-1">
+                <a class="nav-link" role="button">
+                    <i class="fal fa-flask-round-potion"></i>
+                    <span class="font-weight-bold text-primary d-none d-sm-block">&nbsp;Test</span>
+                </a>
+            </li>
+            <li class="nav-item px-md-1 dropdown active no-arrow mx-1">
+                <a class="nav-link" href="monitor.html" role="button">
+                    <i class="fal active fa-monitor-waveform"></i>
+                    <span class="font-weight-bold text-primary d-none d-sm-block">&nbsp;Monitor</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+
+
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="mr-2 d-none d-lg-inline font-weight-bold text-primary">Mark Johnson</span>
+                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                </a>
+                <!-- Dropdown - User Information -->
+                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fal fa-sign-out-alt fa-sm fa-fw mr-2"></i>
+                        Logout
+                    </a>
+                </div>
+            </li>
+
+        </ul>
+
+    </nav>
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-4 col-md-4 mb-4">
+                        <div class="card h-100 shadow mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary"><i class="fal fa-cubes"></i>&nbsp;Entity
+                                </h6>
+                                <div class="float-right">
+
+                                    <div class="dropdown no-arrow">
+                                        <a href="#" id="dropdownMenuLink" data-toggle="dropdown" role="button"
+                                            class="dropdown-toggle btn float-right btn-sm bld-btn btn-primary">
+                                            <span class="text"><i class="text-white text-white fal fa-plus"></i></span>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-left shadow animated--grow-in">
+                                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                                <div class="font-weight-bold">
+                                                    <div class="text-truncate">Lorem ipsum dolor </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                                <div class="font-weight-bold">
+                                                    <div class="text-truncate">Lorem ipsum dolor </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item d-flex align-items-center" href="#">
+
+                                                <div class="font-weight-bold">
+                                                    <div class="text-truncate">Lorem ipsum dolor </div>
+                                                </div>
+                                            </a>
+                                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                                <div class="font-weight-bold">
+                                                    <div class="text-truncate">Lorem ipsum dolor </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-group-flush">
+                                <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+                                    Organization <i class="float-right d-inline text-dark fal fa-chevron-right"></i>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">Project</a>
+                                <a href="#" class="list-group-item list-group-item-action">Person</a>
+                                <a href="#" class="list-group-item list-group-item-action">Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Earnings (Monthly) Card Example -->
+                    <div class="col-xl-8 col-md-8 mb-4">
+                        <div class="card h-100 shadow mb-4">
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div class="float-right">
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Hub & Spoke</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Orchestration </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Children</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="float-right">
+                                    <a href="#" class="btn float-right btn-sm bld-btn btn-primary" data-toggle="modal"
+                                        data-target="#myModal">
+                                        <span class="text"><i class="text-white text-white fal fa-plus"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body font-italic">
+                                <img class="img-fluid mx-auto d-block" height="500px" width="500px" src="img/graph.png">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; Your Website 2020</span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Endpoint Wizard</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="modal-split">
+                        <div class="d-flex flex-row align-items-center mb-3 justify-content-between">
+                            <div class="float-right">
+                                <h5>Step 1: Pick a Vendor</h5>
+
+                            </div>
+                            <div class="float-right">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#">Step 1 - Pick a Vendor</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Step 2 </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Step 3</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Step 4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Gallery -->
+                            <div class="selectable row">
+                                <img src="img/Logo_ADP.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_BigCommerce.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_Guidewire.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_Hubspot.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_Magaya.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_Marketo.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_MSDynamics365.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_MSOffice_365.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_MSTeams.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_Netsuite.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_OpenAir.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_Payload.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_Salesforce.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_ServiceNow.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_Taleo.png" class="col-lg-3 ui-widget-content" />
+                                <img src="img/Logo_UKG.png" class="col-lg-3 ui-widget-content" />
+
+                              </div>
+                        <!-- Gallery -->
+                    </div>
+
+                    <div class="modal-split">
+                        <div class="d-flex flex-row align-items-center mb-3 justify-content-between">
+                            <div class="float-right">
+                                <h5>Step 2: Type</h5>
+
+                            </div>
+                            <div class="float-right">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Step 1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#">Step 2 - Type</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Step 3</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Step 4</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Direction</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Publish</option>
+                                    <option>Subscribe</option>
+                                </select>
+                            </div>
+                            <div class="form-row mb-3">
+                                <div class="col">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio1" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio1">Interval</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" placeholder="Time in Milliseconds">
+                                </div>
+                            </div>
+                            <div class="form-row mb-2">
+                                <div class="col ">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="customRadio2" name="customRadio"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadio2">Scheduled</label>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <select id="search" class="form-control" name="state">
+                                        <option value="" class="selected">Select an Interval</option>
+                                        <option value="organisations">Day of Week</option>
+                                        <option value="contacts">Day of Month</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <div id="organisations">
+                                        <em>Which day of the week would you like this to run?</em>
+                                        <select class="form-control">
+                                            <option>Monday</option>
+                                            <option>Tuesday</option>
+                                            <option>Wednesday</option>
+                                            <option>Thursday</option>
+                                            <option>Friday</option>
+                                            <option>Saturday</option>
+                                            <option>Sunday</option>
+
+                                        </select>
+                                        <em>Time of Day</em>
+                                        <input type="time" class="form-control" name="appt" min="09:00" max="18:00"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <div class="input-group">
+                                    <div id="contacts">
+                                        <em>Which day of the month would you like this to run?</em>
+                                        <input type="number" class="form-control" id="day" name="day" min="1" max="30">
+                                        <em>Time of Day</em>
+                                        <input type="time" class="form-control" name="appt" min="09:00" max="18:00"
+                                            required>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+
+                    <div class="modal-split">
+                        <form>
+                            <div class="d-flex flex-row align-items-center mb-3 justify-content-between">
+                                <div class="float-right">
+                                    <h5>Step 3: Details</h5>
+
+                                </div>
+                                <div class="float-right">
+                                    <ul class="nav nav-pills">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Step 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Step 2 </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#">Step 3 - Details</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Step 4</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="queryList">Query List</label>
+                                <div class="float-right mb-1">
+                                    <a href="#" class="btn float-right btn-sm bld-btn btn-primary">
+                                        <span class="text">Test</span>
+                                    </a>
+                                </div>
+                                <textarea class="form-control" id="queryList" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">List Selector</label>
+                                <input type="text" class="form-control" id="exampleFormControlInput1">
+                            </div>
+                            <div class="form-group">
+                                <label for="querySingle">Query Single</label>
+                                <div class="float-right mb-1">
+                                    <a href="#" class="btn float-right btn-sm bld-btn btn-primary">
+                                        <span class="text">Test</span>
+                                    </a>
+                                </div>
+                                <textarea class="form-control" id="querySingle" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="singleSelector">Single Selector</label>
+                                <input type="text" class="form-control" id="singleSelector">
+                            </div>
+                            <div class="form-group">
+                                <label for="insert">Insert</label>
+                                <input type="text" class="form-control" id="insert">
+                            </div>
+                            <div class="form-group">
+                                <label for="update">Update</label>
+                                <input type="text" class="form-control" id="update">
+                            </div>
+                            <div class="form-group">
+                                <label for="keyselectorjson">Key Selector Json</label>
+                                <input type="text" class="form-control" id="keyselectorjson">
+                            </div>
+                            <div class="form-group">
+                                <label for="keyselectorregex">Key Selector Regex</label>
+                                <input type="text" class="form-control" id="keyselectorregex">
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-split">
+                        <div class="d-flex flex-row align-items-center mb-3 justify-content-between">
+                            <div class="float-right">
+                                <h5>Step 4: Filters</h5>
+
+                            </div>
+                            <div class="float-right">
+                                <ul class="nav nav-pills">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Step 1</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Step 2 </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Step 3</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="#">Step 4 - Filters</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="row mb-3">
+                                <div class="col">
+                                    <label for="Stage">Stage</label>
+                                    <select class="form-control" id="Stage">
+                                        <option>Message Received</option>
+                                        <option>Entity Created</option>
+                                        <option>Entity Updated</option>
+
+                                    </select> </div>
+                                <div class="col">
+                                    <label for="Logic">Logic</label>
+                                    <select class="form-control" id="Logic">
+                                        <option>And</option>
+                                        <option>Or</option>
+                                    </select> </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="inputCity">Property</label>
+                                    <input type="text" class="form-control" id="property">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="Logic">Logic</label>
+                                    <select class="form-control" id="Logic">
+                                        <option>Equal</option>
+                                        <option>Greater</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="value">Value</label>
+                                    <div class="float-right mb-1">
+                                        <a href="#" class="btn float-right btn-sm bld-btn btn-primary">
+                                            <span class="text"><i class="text-white text-white fal fa-plus"></i></span>
+                                        </a>
+                                    </div>
+                                    <input type="text" class="form-control" id="value">
+
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <!--Nothing Goes Here but is needed! -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="js/multi-page-modal.js"></script>
+    <script src="js/conditional-form.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script></body>
+
+</html>
