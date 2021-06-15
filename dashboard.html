@@ -15,7 +15,10 @@
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/all.css" rel="stylesheet" type="text/css">
     <link href="css/muli.css" rel="stylesheet">
-    
+    <link rel="preload" sameorigin href="vendor/gfonts/1Ptvg83HX_SGhgqk3wot.woff2" as="font" type="font/woff2">
+    <link rel="preload" sameorigin href="vendor/gfonts/1Pttg83HX_SGhgqk2jogaqRXBA.woff2" as="font" type="font/woff2">
+    <link rel="preload" sameorigin href="vendor/gfonts/1Pttg83HX_SGhgqk2jovaqQ.woff2" as="font" type="font/woff2">
+    <link rel="preload" as="font" type="font/woff2" sameorigin href="vendor/fontawesome-free/fa-light-300.woff2">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
@@ -311,7 +314,14 @@
     <!-- Page level custom scripts -->
     <script defer src="js/demo/chart-area-demo.js"></script>
     <script defer src="js/demo/chart-pie-demo.js"></script>
-
+    <script src="js/flying-pages.min.js"></script>
+    <script>
+        window.FPConfig = {
+          delay: 0,
+          ignoreKeywords: [],
+          maxRPS: 0,          hoverDelay: 0,
+        };
+      </script>
 </body>
 
 </html>
